@@ -9,7 +9,15 @@ var burger = require("../models/burger")
 
 //Root route will get all burgers in the burgers table
 router.get("/", function(req, res) {
-
+    burger.all(function(data) {
+        var burgObj = {
+            //"burgers" keyword here will be used to pass data to index.handlebars
+            burgers: data
+        }
+        console.log(burgObj)
+        //Send (or render) the burgObj to index
+        res.render("index", burgObj)
+    })
 })
 
 //This route will add burgers to the database
