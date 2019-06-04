@@ -1,9 +1,6 @@
 //Set up connection to MySQL
 var mysql = require("mysql");
 
-//Set up port to process.env.PORT for heroku or default to 3306
-var PORT = process.env.PORT || 8080
-
 var connection = mysql.createConnection({
     host: "localhost",
     port: PORT,
