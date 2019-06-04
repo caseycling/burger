@@ -22,7 +22,13 @@ router.get("/", function(req, res) {
 
 //This route will add burgers to the database
 router.post("/api/bugers", function(req, res) {
-
+    burger.create([
+        "burger_name", "devoured"
+    ], [
+        req.body.burgName, 0
+    ], function(result) {
+        res.json({ d: result.insertId})
+    })
 })
 
 //This route will change devoured value after user clicks the devour button
