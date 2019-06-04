@@ -13,7 +13,23 @@
 	<script>
 		$(function() {
 			$(".devour").on("click", function(event) {
-				console.log("hello world")
+				//Save id of devoured burger
+				var id = $(this).data("burgid")
+				//Changed devour status to true
+				var updatedBurg = {
+					devoured : 1
+				}
+				//Send update request
+				$.ajax("/burgers/" + id, {
+					type: "PUT",
+					data: updatedBurg
+				}).then(
+					function() {
+						console.log("Updated id ", id);
+						//Reload the page for updated liste
+						location.reload();
+					}
+				)
 			})
 			
 			$("#submit").on("click", function(event) {
