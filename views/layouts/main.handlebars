@@ -12,11 +12,11 @@
 	</body>
 	<script>
 		$(function() {
-			$(".devour").on("click", function() {
+			$(".devour").on("click", function(event) {
 				console.log("hello world")
 			})
 			
-			$("#submit").on("click", function() {
+			$("#submit").on("click", function(event) {
 			//Prevent default from submit event
 			console.log("hello world")
 			event.preventDefault();
