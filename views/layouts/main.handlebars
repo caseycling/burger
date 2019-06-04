@@ -15,6 +15,29 @@
 			$("#devour").on("click", function() {
 				console.log("hello world")
 			})
+			
+			$("#submit").on("click", function() {
+			//Prevent default from submit event
+			event.preventDefault();
+
+			var newBurg = {
+				burgName: $("[name=burgInput]").val().trim(),
+			}
+			console.log(newBurg.burgName)
+
+			//Send post request
+			$.ajax("/api/burgers", {
+				type: "POST",
+				data: newBurg
+			}).then(
+				function() {
+					console.log("Created new burger")
+					//Reload page to display new burger
+					//This will fire the root route, triggering previously built code
+					location.reload();
+				})
+			})
 		})
+
 	</script>
 </html>
