@@ -14,12 +14,14 @@
 <br>
 
 <ul>
-    {{#each devouredBurg}}
-        <li>
-            <h3 id="devouredBurg"> 
-                {{burger_name}}
-            </h3>
-        </li>
+    {{#each burgers}}
+        {{#if devoured}}
+            <li>
+                <h3 id="devouredBurg"> 
+                    {{this.burger_name}}
+                </h3>
+            </li>
+        {{/if}}
     {{/each}}
 </ul>
 <br>
