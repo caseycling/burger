@@ -1,11 +1,31 @@
-<img>
+<img src="/public/assets/img/burger.png" alt="Burger">
 <h1>Eat-Da-Burger!</h1>
-{{#each}}
-<h3 id="burgType"> {{burger_name}} </h3>
-<button id="devour">Devour it</button>
+<ul>
+    {{#each burgers}}
+        <li>
+            <h3 id="burgType"> 
+                {{this.burger_name}}
+            </h3>
+            <button id="devour">Devour it</button>
+            <br>
+        </li>
+    {{/each}}
+</ul>
 <br>
-{{/each}}
 
-<h3 id="devouredBurg"> {{burger_name}}</h3>
+<ul>
+    {{#each devouredBurg}}
+        <li>
+            <h3 id="devouredBurg"> 
+                {{burger_name}}
+            </h3>
+        </li>
+    {{/each}}
+</ul>
 <br>
 
+<form id="burgInput" class="">
+    <input type="text" name="burgInput">
+    <button type="submit">Submit</button>
+    <p>Enter a burger you want to eat then click the "Submit button</p>
+</form>
