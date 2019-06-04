@@ -1,10 +1,13 @@
 <img src="/public/assets/img/burger.png" alt="Burger">
 <h1>Eat-Da-Burger!</h1>
 <ul>
+    {{!-- Display each item within the key burgers imported from the controller --}}
     {{#each burgers}}
+        {{!-- UNLESS devoured is true --}}
         {{#unless devoured}}
             <li>
                 <h3 id="burgType"> 
+                    {{!-- Value of burger_name from the imported object --}}
                     {{this.burger_name}}
                 </h3>
                 <button id="devour">Devour it</button>
@@ -16,10 +19,13 @@
 <br>
 
 <ul>
+    {{!-- Display each item within the key burgers --}}
     {{#each burgers}}
+        {{!-- IF devoured is true --}}
         {{#if devoured}}
             <li>
                 <h3 id="devouredBurg"> 
+                    {{!-- Value of burger_name from the imported object --}}
                     {{this.burger_name}}
                 </h3>
             </li>
