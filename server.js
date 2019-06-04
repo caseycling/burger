@@ -28,7 +28,6 @@ var routes = require("./controllers/burgers_controllers")
 //Use routes
 app.use(routes)
 
-
 //Start our server to begin listening to client requests
 app.listen(PORT, function() {
     //Server-side log to tell us when server has started
