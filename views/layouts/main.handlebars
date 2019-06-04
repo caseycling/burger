@@ -18,13 +18,18 @@
 			
 			$("#submit").on("click", function() {
 			//Prevent default from submit event
+			console.log("hello world")
 			event.preventDefault();
 
-			var newBurg = {
-				burgName: $("[name=burgInput]").val().trim(),
-			}
-			console.log(newBurg.burgName)
+			var burgName = $("[name=burgInput]").val().trim()
 
+			//Alert user if no name was entered into input
+			if(burgName === '') {
+				return alert('Please enter a valid burger name')
+			} else {
+			var newBurg = {
+				burgName: burgName
+			}
 			//Send post request
 			$.ajax("/burgers", {
 				type: "POST",
@@ -36,6 +41,7 @@
 					//This will fire the root route, triggering previously built code
 					location.reload();
 				})
+				}
 			})
 		})
 
