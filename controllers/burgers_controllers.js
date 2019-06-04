@@ -32,7 +32,7 @@ router.post("/burgers", function(req, res) {
 })
 
 //This route will change devoured value after user clicks the devour button
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/burgers/:id", function(req, res) {
 
 }) 
 
