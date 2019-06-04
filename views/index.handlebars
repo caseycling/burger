@@ -2,13 +2,15 @@
 <h1>Eat-Da-Burger!</h1>
 <ul>
     {{#each burgers}}
-        <li>
-            <h3 id="burgType"> 
-                {{this.burger_name}}
-            </h3>
-            <button id="devour">Devour it</button>
-            <br>
-        </li>
+        {{#unless devoured}}
+            <li>
+                <h3 id="burgType"> 
+                    {{this.burger_name}}
+                </h3>
+                <button id="devour">Devour it</button>
+                <br>
+            </li>
+        {{/unless}}
     {{/each}}
 </ul>
 <br>
