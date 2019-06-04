@@ -6,12 +6,11 @@
         {{!-- UNLESS devoured is true --}}
         {{#unless devoured}}
             <li>
-                <h3 id={{this.id}}> 
+                <p id={{this.id}}> 
                     {{!-- Value of burger_name from the imported object --}}
                     {{this.burger_name}}
-                </h3>
-                <button class="devour">Devour it</button>
-                <br>
+                    <button class="devour" data-burgid={{this.id}}>Devour it</button>
+                </p>
             </li>
         {{/unless}}
     {{/each}}
@@ -24,10 +23,10 @@
         {{!-- IF devoured is true --}}
         {{#if devoured}}
             <li>
-                <h3 id={{this.id}}> 
+                <p id={{this.id}}> 
                     {{!-- Value of burger_name from the imported object --}}
                     {{this.burger_name}}
-                </h3>
+                <p>
             </li>
         {{/if}}
     {{/each}}
