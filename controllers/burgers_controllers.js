@@ -21,7 +21,7 @@ router.get("/", function(req, res) {
 })
 
 //This route will add burgers to the database
-router.post("/api/bugers", function(req, res) {
+router.post("/burgers", function(req, res) {
     burger.create([
         "burger_name", "devoured"
     ], [
